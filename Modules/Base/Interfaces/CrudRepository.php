@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Interfaces;
+namespace Modules\Base\Interfaces;
 
 interface CrudRepository
 {

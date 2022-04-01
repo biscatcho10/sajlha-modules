@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Modules\Auth\Http\Controllers\API\AuthController;
+use Modules\Auth\Http\Controllers\API\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +21,5 @@ Route::group(['middleware' => 'api'], function($router) {
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::post('/profile', [AuthController::class, 'profile']);
 });
+
+Route::apiResource('users', 'API\UserController');

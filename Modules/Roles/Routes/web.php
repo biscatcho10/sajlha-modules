@@ -12,3 +12,6 @@
 */
 
 
+Route::middleware('dashboard')->prefix('dashboard')->as('dashboard.')->group(function () {
+    Route::resource('roles', 'Dashboard\RoleController');
+});

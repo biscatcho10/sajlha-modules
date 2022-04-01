@@ -13,6 +13,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
+        $this->command->info('Default Admin Information:');
+
+        $this->command->warn('Email : admin@demo.com');
+        $this->command->warn('Password : password');
+
+        $this->command->warn('Do not consider seed dummy data while in production mode!');
+        $seedDummyData = $this->command->confirm('Are you want to seed dummy data?', true);
+
+        if ($seedDummyData) {
+            $this->call([
+                DummyDataSeeder::class,
+            ]);
+        }
     }
 }
